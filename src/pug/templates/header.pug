@@ -1,0 +1,129 @@
+header.header
+	.container.z-index.position-relative
+		.header-top.d-lg-flex.d-none.justify-content-between
+			ul.nav.not-decoration.d-flex.mx-n1
+				li: a.link.p-2(href="") О компании
+				li: a.link.p-2(href="") Акции и новости
+				li: a.link.p-2(href="") Контакты
+				li: a.link.p-2(href="") Оплата и доставка
+				li: a.link.p-2(href="") Документы
+				li: a.link.p-2(href="") Отзывы
+			.lk-container.d-flex
+				.change-city
+					select#city.border-0
+						option(value="" selected="selected") Барнаул
+						option(value="") Новосибирск
+						option(value="") Москва
+				.login.d-flex.align-items-center
+					+icon('user','icon--small mr-2')
+					a(href="").link.mr-1 Вход
+					| |
+					a(href="").link.ml-1 Регистрация
+		.row.header-body
+			.col-3.d-lg-none
+				.hamburger.hamburger--squeeze.d-flex
+					.hamburger-box
+						.hamburger-inner
+			.col-5.phone-block.d-lg-flex.align-items-center.d-none
+				.icon-phone__container.pr-2
+					+icon('phone')
+				.phone-block__container.d-inline-block
+					a.phone-block__link.link.text-big(href="tel:+79059891889"): b +7 (905) 989-18-89
+					.phone-block__text Ежедневно  4:00 - 17:00
+			.col-6.col-lg-2.logo(href="/")
+				+icon('logo','w-100 h-100')
+			.col-3.col-lg-5.d-flex.align-items-center.justify-content-end
+				.search-container.d-lg-inline-block.mr-5.d-none
+					input.text-small.search.border-0.rounded-pill.px-3.w-100(type="search" placeholder="Что вы ищете?")
+				.basket
+		.row.d-lg-flex.d-none
+			.col-1
+				.hamburger.hamburger--squeeze.d-flex
+					.hamburger-box
+						.hamburger-inner
+			.col-11.col-xl-10.d-flex.align-items-center
+				ul.nav-bottom.not-decoration.d-flex.text-uppercase.text-small.mx-n1.justify-content-center
+					li: a.link.p-2(href="") Мёд классический
+					li: a.link.p-2(href="") Крем-мёд
+					li: a.link.p-2(href="") Подарочные наборы
+					li: a.link.p-2(href="") Арахисовая паста
+					li: a.link.p-2(href="") Пчелопродукты
+					li: a.link.p-2(href="") Премиум продукция
+
+	.menu
+		.container.text-small
+			.row
+				.col
+					.subtitle.text-uppercase.mb-3 Мёд классический
+					ul.not-decoration.menu-list
+						li: a.link(href="") Гречишный
+						li: a.link(href="") Лесной
+						li: a.link(href="") Светлое разнотравье
+						li: a.link(href="") Тёмное разнотравье
+						li: a.link(href="") Цветочный
+						li: a.link(href="") Таёжный
+						li: a.link(href="") Горный
+						li: a.link(href="") Васильковый
+						li: a.link(href="") Эспарцетовый
+						li: a.link(href="") Хлопковый
+						li: a.link(href="") Акациевый
+						li: a.link(href="") Липовый
+						li: a.link(href="") Высокогорный
+						li: a.link(href="") Донниковый
+						li: a.link(href="") Дягилевый
+						li: a.link(href="") Каштановый
+				.col
+					.subtitle.text-uppercase.mb-3 Крем-мёд
+					ul.not-decoration.menu-list
+						li: a.link(href="") Гречишный
+						li: a.link(href="") Лесной
+						li: a.link(href="") Светлое разнотравье
+						li: a.link(href="") Тёмное разнотравье
+						li: a.link(href="") Цветочный
+						li: a.link(href="") Таёжный
+						li: a.link(href="") Горный
+						li: a.link(href="") Васильковый
+						li: a.link(href="") Эспарцетовый
+						li: a.link(href="") Хлопковый
+						li: a.link(href="") Акациевый
+						li: a.link(href="") Липовый
+						li: a.link(href="") Высокогорный
+						li: a.link(href="") Донниковый
+						li: a.link(href="") Дягилевый
+						li: a.link(href="") Каштановый
+				.col
+					.subtitle.text-uppercase.mb-3 травяные сборы
+					ul.not-decoration.menu-list
+						li: a.link(href="") Гречишный
+						li: a.link(href="") Лесной
+						li: a.link(href="") Светлое разнотравье
+						li: a.link(href="") Тёмное разнотравье
+						li: a.link(href="") Цветочный
+						li: a.link(href="") Таёжный
+						li: a.link(href="") Горный
+						li: a.link(href="") Васильковый
+						li: a.link(href="") Эспарцетовый
+						li: a.link(href="") Хлопковый
+						li: a.link(href="") Акациевый
+						li: a.link(href="") Липовый
+						li: a.link(href="") Высокогорный
+						li: a.link(href="") Донниковый
+						li: a.link(href="") Дягилевый
+						li: a.link(href="") Каштановый
+				.col
+					.row
+						.col-12.mb-5
+							.subtitle.text-uppercase.mb-3 Прочая продукция
+							ul.not-decoration.menu-list
+								li: a.link(href="") Арахисовая паста
+								li: a.link(href="") Подарочные наборы
+								li: a.link(href="") Пчелопродукты
+								li: a.link(href="") Джем
+								li: a.link(href="") Премиум продукция
+						.col-12
+							.subtitle.text-uppercase.mb-3 Мёд классический
+							ul.not-decoration.menu-list
+								li: a.link(href="") Продукция
+								li: a.link(href="") Оплата и доставка
+								li: a.link(href="") Сотрудничество
+								li: a.link(href="") Контакты

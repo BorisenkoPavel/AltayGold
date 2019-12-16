@@ -1,0 +1,521 @@
+extends templates/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page'
+block content
+	section.section-banner.bg-secondary.pb-0
+		.swiper-container.banner-slider.position-relative
+			.swiper-wrapper
+				.swiper-slide
+					.container
+						.row.no-gutters
+							.col-5.d-flex.flex-column.justify-content-center.align-items-start.banner-content
+								h2 Интернет-магазин Алтайского мёда и&nbsp;подарочных продуктов
+								.subtitle.mb-4.d-none.d-md-block Продаём оптом и в розницу мёд,<br> продукты пчеловодства<br> и продукты с Алтая
+								.btn.btn--arrow Перейти в каталог
+									+icon('arrow')
+							.col-6
+								.banner-img-container
+									.rounded-img.embed-responsive.embed-responsive-1by1
+										+pic('embed-responsive-item','content','banner-img (2)','jpg')
+									+pic('cup','content','blueberry','png')
+				.swiper-slide
+					.container
+						.row.no-gutters
+							.col-5.d-flex.flex-column.justify-content-center.align-items-start.banner-content
+								h2 Интернет-магазин Алтайского мёда и&nbsp;подарочных продуктов
+								.subtitle.mb-4.d-none.d-md-block Продаём оптом и в розницу мёд,<br> продукты пчеловодства<br> и продукты с Алтая
+								.btn.btn--arrow Перейти в каталог
+									+icon('arrow')
+							.col-6
+								.banner-img-container
+									.rounded-img.embed-responsive.embed-responsive-1by1
+										+pic('embed-responsive-item','content','banner-img (3)','jpg')
+									+pic('cup','content','blueberry','png')
+			.swiper-button-prev.banner-prev
+				+icon('arrow','swiper-arrow')
+			.swiper-button-next.banner-next
+				+icon('arrow','swiper-arrow')
+	section.section-advantages.pt-0.mt-n4.z-index
+		.container
+			h1 Почему нам доверяют
+			.row
+				.col-lg-4.info-block.wow
+					.info-block__img.d-flex.align-items-center
+						.info-block__icon.mr-4
+							img(src="/img/general/shipped.svg", alt="")
+						.info-block__title
+							span.info-block__title-num 300
+							span.info-block__title-text.pl-0 тонн
+					.info-block__text Поставили по России,<br> СНГ и Миру
+				.col-lg-4.info-block.wow
+					.info-block__img.d-flex.align-items-center
+						.info-block__icon.mr-4
+							img(src="/img/general/team.svg", alt="")
+						.info-block__title
+							span.info-block__title-num 2000
+							span.info-block__title-text.info-block__title-text--small клиентов
+					.info-block__text Приобрели наш мёд <br>и их всё больше
+				.col-lg-4.info-block.wow
+					.info-block__img.d-flex.align-items-center
+						.info-block__icon.mr-4
+							img(src="/img/general/jam.svg", alt="")
+						.info-block__title
+							span.info-block__title-num 2500
+							span.info-block__title-text.info-block__title-text--small банок
+					.info-block__text Наш самый крупный заказ<br>и мы справились
+	section.section-actions.pattern
+		.container
+			h1 Акции
+			.row.text-white
+				.col-sm-6
+					.action-item
+						.action-item__photo(style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 54.23%, #000000 100%), url('/img/content/news1.jpg') no-repeat center top/cover")
+						a.not-link.action-item__title.stretched-link(href="") Скидка на мёд фасованный в стекло под маркой «Царь-Мёд»
+				.col-sm-6
+					.row.h-100
+						.col-lg-6.mb-sm-3.mb-lg-0
+							.action-item.action-item--small
+								.action-item__photo(style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 54.23%, #000000 100%), url('/img/content/news2.jpg') no-repeat center top/cover")
+								a.not-link.action-item__title.stretched-link(href="") Подарок при покупке джема
+						.col-lg-6
+							.action-item.action-item--small
+								.action-item__photo(style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 54.23%, #000000 100%), url('/img/content/news3.jpg') no-repeat center top/cover")
+								a.not-link.action-item__title.stretched-link(href="") Бесплатная доставка
+	section.section-categories
+		.container
+			h1 Категории
+			.swiper-container.category-slider.pt-4.pt-lg-0
+				.swiper-wrapper.row
+					.col-sm-6.col-lg-4.category-item-container.swiper-slide
+						.category-item
+							img.category-item__img(src="img/content/category-item1.png", alt="")
+							.category-item__title Арахисовая <br>паста
+							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
+								| В каталог
+								+icon('arrow-long')
+					.col-sm-6.col-lg-4.category-item-container.swiper-slide
+						.category-item
+							img.category-item__img(src="img/content/category-item2.png", alt="")
+							.category-item__title Классический<br> мёд
+							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
+								| В каталог
+								+icon('arrow-long')
+					.col-sm-6.col-lg-4.category-item-container.swiper-slide
+						.category-item
+							img.category-item__img(src="img/content/category-item3.png", alt="")
+							.category-item__title Крем-мёд
+							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
+								| В каталог
+								+icon('arrow-long')
+					.col-sm-6.col-lg-4.category-item-container.swiper-slide
+						.category-item
+							.category-item__title Джем
+							img.category-item__img(src="img/content/category-item4.png", alt="")
+							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
+								| В каталог
+								+icon('arrow-long')
+					.col-sm-6.col-lg-4.category-item-container.swiper-slide
+						.category-item
+							img.category-item__img(src="img/content/category-item3.png", alt="")
+							.category-item__title Наборы<br>и сувениры
+							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
+								| В каталог
+								+icon('arrow-long')
+					.col-sm-6.col-lg-4.category-item-container.swiper-slide
+						.category-item
+							img.category-item__img(src="img/content/category-item5.png", alt="")
+							.category-item__title Пчелопродукты
+							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
+								| В каталог
+								+icon('arrow-long')
+					.col-sm-6.col-lg-4.category-item-container.swiper-slide
+						.category-item
+							img.category-item__img(src="img/content/category-item6.png", alt="")
+							.category-item__title Травяные<br>сборы
+							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
+								| В каталог
+								+icon('arrow-long')
+					.col-sm-6.col-lg-4.category-item-container.swiper-slide
+						.category-item
+							img.category-item__img(src="img/content/category-item4.png", alt="")
+							.category-item__title Премиум<br>продукция
+							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
+								| В каталог
+								+icon('arrow-long')
+								
+			.swiper-nav.d-flex.d-lg-none.justify-content-center
+				.swiper-button-prev.category-prev
+					+icon('arrow','swiper-arrow')
+				.swiper-button-next.category-next
+					+icon('arrow','swiper-arrow')
+	section.section-hits.pattern.pattern--right
+		.container
+			.section-hits-title.d-flex.align-items-baseline
+				h1 <span>Хиты продаж</span>
+				h1.not-active <span>Новинки</span>
+			.swiper-container.card-list.card-list--hits
+				.swiper-wrapper
+					.swiper-slide.card.text-center
+						.card__body
+							img.card__img(src="img/content/category-item2.png", alt="")
+							.card__title Алтайский натуральный сотовый мёд
+							.card__category.text-small Мёд классический
+							.card__rating
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+							hr.my-3.border-light
+						.card__footer
+							.card__weight.text-black-50.text-small.text-left 250 гр.
+							.card__buy.d-flex.justify-content-between.align-items-center
+								.card__price 241 <span class="rub">P</span>
+								.card__basket
+									span.b Купить
+									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
+					.swiper-slide.card.text-center
+						.card__body
+							img.card__img(src="img/content/category-item7.png", alt="")
+							.card__title Алтайский натуральный сотовый мёд
+							.card__category.text-small Мёд классический
+							.card__rating
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+							hr.my-3.border-light
+						.card__footer
+							.card__weight.text-black-50.text-small.text-left 250 гр.
+							.card__buy.d-flex.justify-content-between.align-items-center
+								.card__price 241 <span class="rub">P</span>
+								.card__basket
+									span.b Купить
+									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
+					.swiper-slide.card.text-center
+						.card__body
+							img.card__img(src="img/content/category-item3.png", alt="")
+							.card__title Алтайский натуральный сотовый мёд
+							.card__category.text-small Мёд классический
+							.card__rating
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+							hr.my-3.border-light
+						.card__footer
+							.card__weight.text-black-50.text-small.text-left 250 гр.
+							.card__buy.d-flex.justify-content-between.align-items-center
+								.card__price 241 <span class="rub">P</span>
+								.card__basket
+									span.b Купить
+									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
+					.swiper-slide.card.text-center
+						.card__body
+							img.card__img(src="img/content/category-item4.png", alt="")
+							.card__title Алтайский натуральный сотовый мёд
+							.card__category.text-small Мёд классический
+							.card__rating
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+							hr.my-3.border-light
+						.card__footer
+							.card__weight.text-black-50.text-small.text-left 250 гр.
+							.card__buy.d-flex.justify-content-between.align-items-center
+								.card__price 241 <span class="rub">P</span>
+								.card__basket
+									span.b Купить
+									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
+					.swiper-slide.card.text-center
+						.card__body
+							img.card__img(src="img/content/category-item2.png", alt="")
+							.card__title Алтайский натуральный сотовый мёд
+							.card__category.text-small Мёд классический
+							.card__rating
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+							hr.my-3.border-light
+						.card__footer
+							.card__weight.text-black-50.text-small.text-left 250 гр.
+							.card__buy.d-flex.justify-content-between.align-items-center
+								.card__price 241 <span class="rub">P</span>
+								.card__basket
+									span.b Купить
+									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
+			.swiper-container.card-list.card-list--new.not-active
+				.swiper-wrapper
+					.swiper-slide.card.text-center
+						.card__body
+							img.card__img(src="img/content/category-item1.png", alt="")
+							.card__title Алтайский натуральный сотовый мёд
+							.card__category.text-small Мёд классический
+							.card__rating
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+							hr.my-3.border-light
+						.card__footer
+							.card__weight.text-black-50.text-small.text-left 250 гр.
+							.card__buy.d-flex.justify-content-between.align-items-center
+								.card__price 241 <span class="rub">P</span>
+								.card__basket
+									span.b Купить
+									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
+					.swiper-slide.card.text-center
+						.card__body
+							img.card__img(src="img/content/category-item2.png", alt="")
+							.card__title Алтайский натуральный сотовый мёд
+							.card__category.text-small Мёд классический
+							.card__rating
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+							hr.my-3.border-light
+						.card__footer
+							.card__weight.text-black-50.text-small.text-left 250 гр.
+							.card__buy.d-flex.justify-content-between.align-items-center
+								.card__price 241 <span class="rub">P</span>
+								.card__basket
+									span.b Купить
+									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
+					.swiper-slide.card.text-center
+						.card__body
+							img.card__img(src="img/content/category-item7.png", alt="")
+							.card__title Алтайский натуральный сотовый мёд
+							.card__category.text-small Мёд классический
+							.card__rating
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+							hr.my-3.border-light
+						.card__footer
+							.card__weight.text-black-50.text-small.text-left 250 гр.
+							.card__buy.d-flex.justify-content-between.align-items-center
+								.card__price 241 <span class="rub">P</span>
+								.card__basket
+									span.b Купить
+									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
+					.swiper-slide.card.text-center
+						.card__body
+							img.card__img(src="img/content/category-item3.png", alt="")
+							.card__title Алтайский натуральный сотовый мёд
+							.card__category.text-small Мёд классический
+							.card__rating
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+							hr.my-3.border-light
+						.card__footer
+							.card__weight.text-black-50.text-small.text-left 250 гр.
+							.card__buy.d-flex.justify-content-between.align-items-center
+								.card__price 241 <span class="rub">P</span>
+								.card__basket
+									span.b Купить
+									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
+					.swiper-slide.card.text-center
+						.card__body
+							img.card__img(src="img/content/category-item4.png", alt="")
+							.card__title Алтайский натуральный сотовый мёд
+							.card__category.text-small Мёд классический
+							.card__rating
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+							hr.my-3.border-light
+						.card__footer
+							.card__weight.text-black-50.text-small.text-left 250 гр.
+							.card__buy.d-flex.justify-content-between.align-items-center
+								.card__price 241 <span class="rub">P</span>
+								.card__basket
+									span.b Купить
+									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
+			.swiper-nav.d-flex.justify-content-center
+				.swiper-button-prev.card-list-prev
+					+icon('arrow','swiper-arrow')
+				.swiper-button-next.card-list-next
+					+icon('arrow','swiper-arrow')
+	section.section-company
+		.container.pb-5.pb-lg-0
+			.row
+				.col-lg-7.pr-5
+					h1 Наша компания
+					p.b Компания «ALTAY GOLD» занимается поставкой мёда, пчело-продукции, крем-мёда, продуктов Алтая оптом и в розницу.
+					p Мы достаточно молодая и амбициозная компания, которая за два года успела заработать доверие и любовь клиентов.
+					p За это время мы:
+					ul
+						li поставили более 300 тонн натурального Алтайского мёда по регионам России, а также в такие страны как Казахстан, Азербайджан, Саудовская Аравия и Объединенные Арабские Эмираты‎.
+						li запустили собственное производство крем-мёда, натурального варенья и мармелада.
+					p Сейчас помимо пчело-продукции предлагаем нашим новым и постоянным клиентам подарочные наборы собственного изготовления!
+				.col-5.d-none.d-lg-block
+					.gallery-img.swiper-container
+						.swiper-wrapper
+							.swiper-slide.embed-responsive.embed-responsive-1by1
+								+pic('embed-responsive-item','content','banner-img (1)','jpg')
+							.swiper-slide.embed-responsive.embed-responsive-1by1
+								+pic('embed-responsive-item','content','banner-img (2)','jpg')
+							.swiper-slide.embed-responsive.embed-responsive-1by1
+								+pic('embed-responsive-item','content','banner-img (3)','jpg')
+					.swiper-nav.d-flex.justify-content-end
+						.swiper-button-prev.gallery-img-prev
+							+icon('arrow','swiper-arrow')
+						.swiper-button-next.gallery-img-next
+							+icon('arrow','swiper-arrow')
+	section.section-news
+		.container.z-index.position-relative
+			h1 Новости
+			.row.mb-5
+				.col-lg-4.mb-4.mb-lg-0
+					.news
+						.news__img(style="background: url('/img/content/news2.jpg') no-repeat center/cover")
+						.news__content
+							.news__text
+								p.news__title.text-big.b Скидки на подарочные наборы к дню учителя!
+								p
+							.news__date.text-small
+								+icon('calendar','mb-1 mr-2')
+								| 1 октября 2019
+				.col-lg-4.mb-4.mb-lg-0
+					.news
+						.news__img(style="background: url('/img/content/news1.jpg') no-repeat center/cover")
+						.news__content
+							.news__text
+								p.news__title.text-big.b Новинка — крем-мёд!
+								p Крем-мёд — пищевой продукт, получаемый в процессе кремирования натурального мёда
+							.news__date.text-small
+								+icon('calendar','mb-1 mr-2')
+								| 1 октября 2019
+				.col-lg-4.mb-4.mb-lg-0
+					.news
+						.news__img(style="background: url('/img/content/news3.jpg') no-repeat center/cover")
+						.news__content
+							.news__text
+								p.news__title.text-big.b С 1 сентября доставляем в любую точку земного шара.
+								p Уважаемые клиенты и партнёры, мы расширяемся и с 1 сентрября теперь доставляем вкусный мёд по всему миру
+							.news__date.text-small
+								+icon('calendar','mb-1 mr-2')
+								| 1 октября 2019
+			.btn-container.text-center
+				.btn.btn--white Все новости
+	section.section-reviews
+		.container
+			h1.text-center Отзывы клиентов
+			.swiper-container.reviews-list
+				.swiper-wrapper
+					.swiper-slide.card.text-center
+						.card__body
+							.card__img.card-photo(style='background: url("img/content/reviews1.jpg") no-repeat center')
+							.card__name.b.mb-1 Александр Иванов
+							.card__rating
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+							.text-small.
+								Я заказывал 4 баночки меда
+								и 3 разных джема.
+								Все было очень вкусно.
+								Свежий мёд, разнообразный
+								ассортимент, приятные
+								и компетентные продавцы. Доставили тоже все вовремя.
+								Я теперь Ваш постоянный
+								клиент и знакомым посоветую.
+								Спасибо за хорошее обслуживание!
+					.swiper-slide.card.text-center
+						.card__body
+							.card__img.card-photo(style='background: url("img/content/reviews2.jpg") no-repeat center')
+							.card__name.b.mb-1 Ольга Викторовна
+							.card__rating
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+							.text-small.
+								У меня проблемы с иммунитетом
+								и для его укрепления я принимаю гречишный мёд. Но натуральный
+								его купить достаточно проблематично.
+								Решила купить здесь на пробу
+								полкилограмма. Когда курьер доставил, попробовала. Вкус терпкий, слегка горчит. Цвет насыщенно коричневый.
+								Всё это признаки натурального мёда.
+								Я остался доволен покупкой, теперь заказываю здесь мед постоянно
+					.swiper-slide.card.text-center
+						.card__body
+							.card__img.card-photo(style='background: url("img/content/reviews3.jpg") no-repeat center')
+							.card__name.b.mb-1 Григорий
+							.card__rating
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+							.text-small.
+								Большое спасибо Вам
+								за удовольствие и чудесную
+								продукцию!!! Мы брали мед
+								в офис на целый отдел!
+								Взяли разные сорта мёда.
+								Ваш мёд просто фантастика!
+								Мне очень понравился именно
+								таёжный мёд. Очень нежный
+								и вкусный. Спасибо Вам!
+				.swiper-nav
+					.swiper-button-prev.reviews-list-prev
+							+icon('arrow','swiper-arrow')
+					.swiper-button-next.reviews-list-next
+							+icon('arrow','swiper-arrow')
+			.btn-container.text-center
+				.btn.btn-secondary Все отзывы
+	section.section-partners.pattern
+		.container
+			h1.text-center Нам доверяют
+			.swiper-container.partners-list.mb-4
+				.swiper-wrapper
+					.swiper-slide.d-flex.align-items-center.h-auto.justify-content-center
+						img.partners-logo(src="/img/content/logo (1).png", alt="")
+					.swiper-slide.d-flex.align-items-center.h-auto.justify-content-center
+						img.partners-logo(src="/img/content/logo (2).png", alt="")
+					.swiper-slide.d-flex.align-items-center.h-auto.justify-content-center
+						img.partners-logo(src="/img/content/logo (3).png", alt="")
+					.swiper-slide.d-flex.align-items-center.h-auto.justify-content-center
+						img.partners-logo(src="/img/content/logo (4).png", alt="")
+						//- .logo(style="background: url('/img/content/logo (1).png')")
+			.swiper-nav.d-flex.justify-content-center
+				.swiper-button-prev.partners-list-prev
+					+icon('arrow','swiper-arrow')
+				.swiper-button-next.partners-list-next
+					+icon('arrow','swiper-arrow')
+
+	section.section-sign
+		.container.d-none.d-md-block
+			form.row
+				.col
+					.subtitle.b Подписывайтесь<br>на новости и акции
+				.col
+					input.input-text.input--long(type="mail" placeholder="Оставьте свой e-mail")
+				.col
+					button.btn.border-0 Подписаться
+				.col.d-lg-flex.d-none.align-items-center
+					+icon('card1','icon-card mx-1')
+					+icon('card2','icon-card mx-1')
+					+icon('card3','icon-card mx-1')

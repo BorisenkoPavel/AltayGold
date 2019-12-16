@@ -1,0 +1,104 @@
+@import ../../../vars
+.btn.btn--white
+	background-color: #fff
+	box-shadow: 0px 0px 10px rgba(213, 102, 1, 0.5)
+	color: $text
+	&:hover
+		background-color: $accent
+		color: #fff
+		box-shadow: 0 0 0px 0 $accent
+.btn.btn-secondary
+	background-color: $secondary
+	color: $text
+	&:hover
+		color: #fff
+		background-color: $accent
+		box-shadow: 0 0 0px 0 $accent
+.btn
+	font-size: 1.125rem
+	border: none
+	cursor: pointer
+	display: inline-flex
+	align-items: center
+	height: 2.875rem
+	white-space: nowrap
+	background-color: $accent
+	border-radius: 25px
+	padding: 0 30px
+	color: #fff
+	font-weight: 500
+	&:hover
+		background-color: #fff
+		box-shadow: 0 0 6px 0 $accent
+		color: $text
+.btn.btn--arrow
+	svg
+		width: 7px
+		height: 12px
+		fill: currentColor
+		stroke: currentColor
+		margin-left: 10px
+		transition: transform .5s ease, fill .3s ease, stroke .3s ease
+	&:hover
+		svg
+			transform: translate(5px)
+			fill: $text
+			stroke: $text
+.swiper-button-prev, .swiper-button-next
+	background-color: $secondary
+	border-radius: 50%
+	width: 40px
+	height: 40px
+	display: flex
+	align-items: center
+	justify-content: center
+	background-image: none
+	top: auto
+	bottom: 0
+	position: static
+	margin: 10px
+	transition: .3s ease
+	svg
+		transition: .3s ease
+	&:hover
+		background-color: $accent
+		svg
+			fill: #fff
+			stroke: #fff
+.swiper-button-next
+.swiper-button-prev
+	svg
+		transform: rotate(180deg)
+.swiper-pagination-bullet.swiper-pagination-bullet-active
+.swiper-pagination-bullet
+.reviews-list
+	.swiper-nav
+		position: absolute
+		top: 50%
+		transform: translatey(-50%)
+		left: 0
+		right: 0
+		display: flex
+		justify-content: center
+		margin: auto
+		
+	.swiper-button-next,.swiper-button-prev
+		margin: 0 18%
+.swiper-arrow
+	width: 9.5px
+	height: 18px
+	fill: $text
+
+.swiper-button-prev.banner-prev ,.swiper-button-next.banner-next
+	background: rgba(255, 255, 255, 0.5)
+	z-index: 50
+	position: absolute
+	top: 40%
+	transform: translatey(-50%)
+	&:hover
+		background-color: $accent
+
+.swiper-button-prev.banner-prev
+	left: 5%
+.swiper-button-next.banner-next
+	right: 5%

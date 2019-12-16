@@ -1,0 +1,112 @@
+header
+  background-color: #FED83D
+  position: relative
+  & > .container
+    background-color: #FED83D
+.header-top
+  height: 52px
+  border-bottom: 1px solid rgba(204, 166, 9,.4)
+  align-items: center
+
+.header-body
+  padding: 20px 0
+
+.lk-container
+  max-width: 315px
+  width: 100%
+  justify-content: space-between
+  
+.icon-phone
+  width: 20px
+  height: 20px
+  &__container
+    align-self: flex-start
+    padding-top: .4rem
+.phone-block__text
+  font-size: 0.8125rem
+  line-height: 1
+  padding-left: 0.625rem
+a.phone-block__link
+  line-height: 1
+.search-container
+  max-width: 280px
+  width: 100%
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    right: 10px
+    top: 0
+    bottom: 0
+    margin: auto
+    background-image: url(/img/general/loupe.svg)
+    width: 18px
+    height: 18px
+    background-size: contain
+    background-color: #fff
+.search:focus
+  box-shadow: 0 0 6px 0 #FF5631
+.search
+  height: 32px
+  transition: .3s ease
+.logo
+  width: 91px
+  height: 50px
+.basket
+  background-image: url(/img/general/basket.svg)
+  width: 43px
+  height: 40px
+  background-repeat: no-repeat
+  background-size: contain
+
+.menu.is-active
+  transform: translatey(0%)
+  transition-timing-function: ease-out
+  &:before
+    transform: scaley(1.8)
+  & > .container
+    opacity: 1
+    transform: translatey(0)
+    transition: .8s ease .8s
+.menu
+  width: 100%
+  height: auto
+  background-color: #FED83D
+  position: absolute
+  top: 100%
+  z-index: 45
+  transform: translatey(-150%)
+  transition: 1s ease-in
+  padding-top: 1rem
+  padding-bottom: 1rem
+  &:before
+    content: ''
+    position: absolute
+    top: 99%   
+    background: url(/img/general/header-bg.svg) no-repeat top/100%
+    height: 145px
+    left: 0
+    right: 0
+    transform-origin: top
+    transition: 1.5s ease
+  & > .container
+    opacity: 0
+    transform: translatey(-15%)
+    transition: .4s ease
+
+.menu-list
+	li
+		margin-bottom: 0.3125rem
+  a
+    position: relative
+    padding-left: 10px
+    &:before
+      content: ''
+      width: 4px
+      height: 4px
+      background-color: currentColor
+      position: absolute
+      left: 0
+      top: 6px
+      border-radius: 50%
+

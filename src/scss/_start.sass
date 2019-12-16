@@ -1,0 +1,183 @@
+@import vars
+@import mixins/mixins
+@import libs/libs
+@import modules/modules
+
+html
+	@include fluid-type($min_width, $max_width, $min_font, $max_font)
+	height: 100%
+
+body
+	height: 100%
+	font-family: $d-font, 'sans-serif'
+	min-width: 320px
+	color: $text
+
+h1
+	font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem
+	@include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2*$mod_2*$mod_2 *0.90 *$min_font)
+
+h2
+	font-size: $mod_1*$mod_1*$mod_1 *0.5rem
+	@include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2*$mod_2 *$min_font)
+
+h3 
+	font-size: $mod_1*$mod_1 *1rem
+	@include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font)
+
+h4
+	font-size: $mod_1*$mod_1*$mod_1 *0.5rem
+	@include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font)
+
+h5
+	font-size: $mod_1*$mod_1 *1rem
+	@include fluid-type($min_width, $max_width, $mod_1 *$min_font, $mod_2 *$min_font)
+
+h1, h2, h3, h4, h5, h6
+	font-weight: 700
+	line-height: 1.2
+	margin-bottom: calc(.5rem + .5em)
+	
+.subtitle
+	font-size: 1.25rem
+	line-height: 1.3
+.text-small
+	font-size: 0.875rem
+
+.text-big
+	font-size: 1.125rem
+
+.b
+	font-weight: 500
+
+a, a:hover
+	text-decoration: none
+
+textarea
+	resize: none
+
+input,
+select,
+button,
+.swiper-pagination-bullet,
+.swiper-button-prev,
+.swiper-button-next
+	outline: none
+
+.wrapper
+	display: flex
+	flex-direction: column
+	height: 100%
+.content
+	flex: 1 0 auto
+	overflow: hidden
+
+section
+	position: relative
+	padding: 4.5rem 0
+
+.link
+	color: inherit
+	transition: .1s ease
+	&:hover
+		color: $primary
+		text-decoration: none
+
+.not-link
+	color: inherit
+	&:hover
+		color: inherit
+		text-decoration: none
+
+.dotted-link
+	color: $secondary
+	border-bottom: 1px dashed CurrentColor
+	cursor: pointer
+	transition: .1s ease
+	&:hover
+		color: $primary
+		text-decoration: none
+		border-bottom: 1px dashed $primary
+
+.arrow-link.arrow-link--white
+	&:hover
+		color: inherit
+		svg
+			fill: currentColor
+
+.arrow-link
+	color: inherit
+	font-weight: 500
+	display: inline-flex
+	align-items: center
+	svg
+		width: 17px
+		height: 14px
+		fill: currentColor
+		margin-left: 8px
+	&:hover
+		color: $primary
+		text-decoration: none
+		transition: .3s ease
+		svg
+			fill: $primary
+			transition: .3s ease
+			animation: bounced .8s
+
+@keyframes bounced
+	0%
+		transform: translatex(0)
+	50%
+		transform: translatex(10px)
+	100%
+		transform: translatex(0)
+
+.z-index
+	z-index: 50
+
+.not-decoration
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+.not-wrap
+	white-space: nowrap
+
+picture.bg
+	position: absolute
+	top: 0
+	bottom: 0
+	right: 0
+	left: 0
+	overflow: hidden
+	display: flex
+	img
+		position: absolute
+		top: 50%
+		width: 100%
+		height: 100%
+		object-fit: cover
+		transform: translatey(-50%)
+
+.h-auto
+	height: auto!important
+
+
+.pattern.pattern--right:before
+	right: 0
+	left: auto
+	transform: translate(50%) rotate(150deg)
+.section-partners.pattern:before
+	top: 8%
+	transform: translate(-31%) rotate(-47deg)
+.pattern:before
+	content: ''
+	background: url(/img/general/pattern.svg) no-repeat center/contain
+	position: absolute
+	left: 0
+	top: 50%
+	transform: translate(-50%)
+	width: 610px
+	height: 637px
+	pointer-events: none
+	z-index: -1

@@ -1,0 +1,94 @@
+@import "vars"
+
+/*==========  Internet explorer  ==========*/
+
+@media all and (-ms-high-contrast:none)
+
+
+/*==========  FireFox  ==========*/
+
+@-moz-document url-prefix()
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1400px
++media-breakpoint-down(xl)
+
+// ≥1200px
++media-breakpoint-down(lg)
+  section
+    padding: calc(2rem + 2.5vw) 0
+  .lk-container
+    width: auto
+  .nav-bottom
+    font-size: 0.84rem
+  .info-block__title-num
+    font-size: 3.5rem
+  .info-block__title-text
+    font-size: 1.75rem
+  .info-block__title-text--small
+    font-size: 1.275rem
+  .info-block__text br
+    display: none
+  .section-news:before
+    height: 125px
+    background: url(/img/general/bg-news-top.svg) no-repeat top center/1400px
+  .section-news:after
+    height: 120px
+    background: url(/img/general/bg-news-bottom.svg) no-repeat bottom center/1200px
+// ≥992px
++media-breakpoint-down(md)
+  .header-body
+    align-items: center
+  .banner-slider:before 
+    background: url(/img/general/bg-wave.svg) no-repeat top center/1200px #fff
+    height: 145px
+  .info-block
+    margin-bottom: 2.5rem
+  .info-block__title-num
+    font-size: 5rem
+  .info-block__title-text
+    font-size: 2.5rem
+  .info-block__title-text--small
+    font-size:  1.875rem
+
+  .action-item.action-item--small
+    height: 100%
+    p
+
+  .section-news:after
+    height: 155px
+    background: url(/img/general/bg-news-bottom.svg) no-repeat bottom center/1200px
+  .reviews-list .card.swiper-slide-active
+    transform: scale(1.05)
+  .input-text.input--long
+    width: auto
+// ≥768px
++media-breakpoint-down(sm)
+  .section-sign:before
+    height: 125%
+  .reviews-list 
+    padding: 175px 40px 9.5%
+    .card.swiper-slide-active
+      transform: scale(1.04)
+  .section-sign
+    padding-bottom: 0
+// ≥576px
++media-breakpoint-down(xs)
+  .action-item
+    height: 280px!important
+    margin-bottom: 1.5rem!important
+/*==========  mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+  
+// ≤1200px
++media-breakpoint-up(xl)
