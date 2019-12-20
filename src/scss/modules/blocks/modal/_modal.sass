@@ -1,6 +1,8 @@
 .modal-footer, .modal-header
 	border: none
-
+.modal-content
+  border-radius: 12px
+  padding: 1.375rem 2.5rem
 .label-container.label-container--textarea
   span
     top: 1.5625rem
@@ -10,21 +12,19 @@
     border: 1px solid $text
 .label-container.error
   .input-text
-    border: 1px solid $danger
+    border: 1px solid $danger!important
     color: $danger
   &:before
     content: 'Поле заполнено некорректно'
     color: $danger
     font-size: 10px
     position: absolute
-    bottom: 100%
+    top: 10px
     right: 0
 .label-container
   position: relative
   display: block
   margin-bottom: 1.3rem
-  input
-    height: 3.125rem
 .input-text:focus
   box-shadow: 0 0 6px 0 #FF5631
 .input-text
@@ -32,21 +32,24 @@
   border: 1px solid transparent
   width: 100%
   padding: 0 1.25rem
-  height: 2.875rem
+  height: 2.75rem
   background-color: #fff
   border-radius: 23px
+#lk
+  .input-text
+    border-color: #BEBCBC
 textarea
   padding-top: 0.6875rem
-.label-text
-  position: absolute
-  top: 50%
-  transform: translatey(-50%)
-  transition: font-size .3s ease, top .3s ease
-  left: 0.625rem
-  padding: 0 10px
-  display: inline-block
-  pointer-events: none
-  font-size: 1rem
+// .label-text
+//   position: absolute
+//   top: 50%
+//   transform: translatey(-50%)
+//   transition: font-size .3s ease, top .3s ease
+//   left: 0.625rem
+//   padding: 0 10px
+//   display: inline-block
+//   pointer-events: none
+//   font-size: 1rem
 .label-text.active
   top: 0
   background-color: #fff
@@ -55,6 +58,6 @@ input.checkbox
   vertical-align: middle
   margin-right: 5px
 .close
-  position: absolute
+  // position: absolute
   right: 20px
   top: 20px

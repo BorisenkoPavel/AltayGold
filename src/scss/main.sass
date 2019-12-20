@@ -19,25 +19,30 @@
 .icon-card
   width: 54px
   height: 54px
+.icon-error
+  fill: $text
+  width: 30px
+  height: 30px
 .section-hits-title 
   h1
     cursor: pointer
-  h1:first-child
-    position: relative
-    margin-right: 40px
-    &:before
-      content: ''
-      position: absolute
-      right: -21px
-      height: .6em
-      bottom: 0
-      top: .1em
-      margin: auto
-      width: 1px
-      background-color: $text
+    color: $accent
   h1.not-active
     @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font)
-    color: $accent
+    color: $text
+.divider
+  position: relative
+  margin-right: 40px
+  &:before
+    content: ''
+    position: absolute
+    right: -21px
+    height: .6em
+    bottom: 0
+    top: .1em
+    margin: auto
+    width: 1px
+    background-color: $text
 .content
   position: relative
   &:before
@@ -78,7 +83,7 @@
   transform: translate(39%, 5%)
 
 .info-block
-  padding-left: 7%
+  padding-left: 6%
   display: flex
   flex-direction: column
   justify-content: space-between
@@ -115,7 +120,19 @@
 .info-block__text
   font-size: 1.375rem
   font-weight: 500
+  line-height: 1.3
 
+.anime-block
+  position: absolute
+  // height: 72%
+  left: 48%
+  top: 25%
+  transform: translateX(-50%)
+.bee
+  position: absolute
+  top: -30px
+  left: -30px
+  transform: rotate(87deg)
 .action-item
   overflow: hidden
   border-radius: 12px
@@ -213,7 +230,21 @@
   .card
     &:hover
       box-shadow: 0px 4px 30px rgba(67, 66, 66, 0.2)
-      transform: scale(1.05)
+      transform: scale(1.0625)
+      .card__basket
+        width: 100%
+        border-radius: 25px
+        border: 1px solid transparent
+        background-color: $secondary
+        transition: all .3s ease, border .0s
+        span
+          opacity: 1
+          transition: .3s ease
+        .basket-icon
+          opacity: 0
+          pointer-events: none
+          transition: 0s
+          transition-delay: 0s
 .card-container
   padding-top: 155px
 .card.card--hit
@@ -235,8 +266,11 @@
   background-color: #fff
   padding: 125px 20px 30px 
   border-radius: 12px
-  transition: .3s $ts!important
+  backface-visibility: hidden
+  will-change: transform
+  transition: transform .3s ease, box-shadow .3s ease!important
   position: relative
+  text-align: center
   &__title
     font-size: 1.125rem
     font-weight: 500
@@ -256,32 +290,27 @@
     margin-bottom: 10px
   &__price
     font-size: 2.25rem
+    line-height: 1.27
+    flex: 0 0 auto
+    margin-right: 15px
   hr
     border: 1px solid #EDEDED
+  &__basket-container
+    width: 5.9375rem
+    text-align: right
   &__basket
     width: 46px
     height: 46px
     border: 1px solid #434242
     border-radius: 50%
     position: relative
-    transition: .3s ease
-    display: flex
+    transition: all .3s ease, border .3s
+    display: inline-flex
     justify-content: center
     align-items: center
     cursor: pointer
     span
       opacity: 0
-    &:hover
-      width: 5.9375rem
-      border-radius: 25px
-      border: 1px solid transparent
-      background-color: $secondary
-      span
-        opacity: 1
-        transition: .3s ease
-      .basket-icon
-        opacity: 0
-        pointer-events: none
     .basket-icon
       position: absolute
       top: 0
@@ -289,6 +318,8 @@
       right: 0
       left: 0
       margin: auto
+      transition: .3s
+      transition-delay: 0.05s
   &__img
     position: absolute
     top: 0
@@ -297,7 +328,6 @@
     height: 45%
     margin: auto
     transform: translatey(-50%)
-
 .rub
   position: relative
   &:before
@@ -567,6 +597,7 @@
     border-radius: 18px
     padding: 7px 8px!important
   .ui-menu
+    padding: 10px!important
     overflow: hidden
     border-radius: 10px!important
     box-shadow: 0px 4px 30px rgba(67, 66, 66, 0.2)
@@ -594,7 +625,187 @@
     order: 1
   .input-text:last-child
     order: 2
+.card__feature-list
+  display: none!important
+.count-block
+  display: none
+  &__plus, &__minus
+    width: 30px
+    height: 30px
+    background-color: $secondary
+    border-radius: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+    color: #fff
+    font-size: 18
+    font-weight: 500
+    cursor: pointer
+  &__value
+    width: 50px
+    background-color: #EDEDED
+    border: none
+    border-radius: 4px
+    margin: 0 10px
+    text-align: center
+    font-size: 1.125rem
+    font-weight: 500
+.catalog-list.catalog-list--row
+  .divider
+    margin-right: 30px
+    &:before
+      right: -14.5px
+      height: 1em
 
+  .card
+    padding: 1.875rem
+    display: flex
+    justify-content: space-between
+    align-items: center
+    text-align: left
+    &-container
+      padding: 0
+      margin-bottom: 30px
+      flex: 0 0 100%
+      width: 100%
+      max-width: 100%
+    &__img
+      position: static
+      height: 100%
+      max-height: 6.25rem
+      transform: translate(0)
+      margin-left: 1.25rem
+      margin-right: 1.875rem
+      max-width: 73px
+      width: 100%
+      object-fit: contain
+    &__body
+      display: flex
+    &__option
+      top: 0
+    &__specs
+      display: flex
+      flex-direction: column
+    &__weight
+      order: 1
+    &__category
+      display: none
+    .count-block
+      display: flex
+    &__title
+      margin-bottom: 0
+      &:before
+        display: none
+    &__footer
+      align-items: center!important
+      justify-content: space-between
+      flex: 0 1 460px
+    &__name
+      max-width: 210px
+      margin-left: 30px
+    &__feature-list
+      display: flex!important
 
+.fancybox-content
+  .card-container
+    max-width: 100%
+    flex: 1 1 100%
 
+.card__feature-name
+  display: none
+.card__feature-consist
+  display: none!important
+#card
+  &.show
+    .modal-dialog
+      transform: translate(0, -50%)
+  .close
+    position: absolute
+    z-index: 300
+  .card-nav
+    position: absolute
+    top: 0
+    bottom: 0
+    margin: auto
+    cursor: pointer
+    z-index: 1300
+  .card-nav.card-nav--prev
+    right: 101%
+    left: auto
+  .card-nav.card-nav--next
+    left: 101%
+  .modal-dialog
+    position: relative
+    top: 50%
+    transform: translate(0, -55%)
+    margin: auto
+    pointer-events: all
+    min-height: auto
+    &:before
+      display: none
+  .modal-content
+    position: relative
+    overflow: hidden
+    &:before,&:after
+      content: ''
+      background: url(/img/general/pattern.svg) no-repeat center/contain
+      position: absolute
+      left: 0
+      top: 0
+      transform: translate(-44%, -47%) rotate(-301deg)
+      width: 610px
+      height: 637px
+      pointer-events: none
+    &:after
+      top: auto
+      bottom: 0
+      right: 0
+      left: auto
+      transform: translate(27%, 50%) rotate(-110deg)
+  .card
+    text-align: left
+    background: transparent
+    &__body
+      margin-bottom: 2.5rem
+      
+    &__feature-list
+      display: flex!important
+      flex-direction: column
+      margin-bottom: 2rem
+      padding-bottom: 2rem
+      border-bottom: 1px solid #EDEDED
+      &>*
+        margin: .2rem
+    &__feature-name
+      display: inline!important
+    &__feature-consist
+      display: flex!important
+    .divider
+      margin-right: 0
+      &:before
+        display: none
+    &__footer
+      justify-content: space-between
+      flex: 0 1 460px
+    &__weight
+      order: 1
+    &__category
+      display: none
+    .count-block
+      display: flex
+    &__title
+      margin-bottom: 0
+      &:before
+        display: none
+    &__price
+      line-height: 0.8
+      margin-top: .5rem
+    hr
+      display: none
+  
+  .card-container
+    z-index: 50
+    & > .card__img
+      display: none
 @import media
+

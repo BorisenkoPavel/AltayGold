@@ -13,7 +13,7 @@ block content
 							.col-5.d-flex.flex-column.justify-content-center.align-items-start.banner-content
 								h2 Интернет-магазин Алтайского мёда и&nbsp;подарочных продуктов
 								.subtitle.mb-4.d-none.d-md-block Продаём оптом и в розницу мёд,<br> продукты пчеловодства<br> и продукты с Алтая
-								.btn.btn--arrow Перейти в каталог
+								a(href="/catalog.html").btn.btn--arrow Перейти в каталог
 									+icon('arrow')
 							.col-6
 								.banner-img-container
@@ -26,7 +26,7 @@ block content
 							.col-5.d-flex.flex-column.justify-content-center.align-items-start.banner-content
 								h2 Интернет-магазин Алтайского мёда и&nbsp;подарочных продуктов
 								.subtitle.mb-4.d-none.d-md-block Продаём оптом и в розницу мёд,<br> продукты пчеловодства<br> и продукты с Алтая
-								.btn.btn--arrow Перейти в каталог
+								a(href="/catalog.html").btn.btn--arrow Перейти в каталог
 									+icon('arrow')
 							.col-6
 								.banner-img-container
@@ -38,9 +38,14 @@ block content
 			.swiper-button-next.banner-next
 				+icon('arrow','swiper-arrow')
 	section.section-advantages.pt-0.mt-n4.z-index
-		.container
+		.anime-block
+			svg.vector(width='1355', height='264', viewBox='0 0 1355 264', fill='none', xmlns='http://www.w3.org/2000/svg')
+				path(d='M-43 263.5C-33.5 239.833 -12.5 198.3 35.5 185.5C105.5 166.833 124 233.603 93.5 252C67.4534 267.711 22 251.5 26.5 202C29.3522 170.625 80.5 106 188.5 105M500 120.5C530 126.5 558.5 139 584.5 159.5M648 208.5C680.167 226.333 756.3 263.3 835.5 248.5C934.5 230 924 178 915.5 163C907 148 882.5 145.5 873.5 166C867.565 179.519 873.5 222.5 925.5 224C967.1 225.2 996.833 210.833 1006.5 203.5M1307.5 93.5C1325.33 83.8333 1359.5 51.8 1353.5 1', stroke='#FECC00', stroke-dasharray='4 4')
+			img.bee(src="img/general/bee.svg", alt="")
+		.container.position-relative
+			
 			h1 Почему нам доверяют
-			.row
+			.row.py-4
 				.col-lg-4.info-block.wow
 					.info-block__img.d-flex.align-items-center
 						.info-block__icon.mr-4
@@ -69,17 +74,17 @@ block content
 		.container
 			h1 Акции
 			.row.text-white
-				.col-sm-6
+				.col-sm-6.wow.fadeInUp(data-wow-duration="1s")
 					.action-item
 						.action-item__photo(style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 54.23%, #000000 100%), url('/img/content/news1.jpg') no-repeat center top/cover")
 						a.not-link.action-item__title.stretched-link(href="") Скидка на мёд фасованный в стекло под маркой «Царь-Мёд»
 				.col-sm-6
 					.row.h-100
-						.col-lg-6.mb-sm-3.mb-lg-0
+						.col-lg-6.mb-sm-3.mb-lg-0.wow.fadeInUp(data-wow-duration="1s")
 							.action-item.action-item--small
 								.action-item__photo(style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 54.23%, #000000 100%), url('/img/content/news2.jpg') no-repeat center top/cover")
 								a.not-link.action-item__title.stretched-link(href="") Подарок при покупке джема
-						.col-lg-6
+						.col-lg-6.wow.fadeInUp(data-wow-duration="1s")
 							.action-item.action-item--small
 								.action-item__photo(style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 54.23%, #000000 100%), url('/img/content/news3.jpg') no-repeat center top/cover")
 								a.not-link.action-item__title.stretched-link(href="") Бесплатная доставка
@@ -89,56 +94,56 @@ block content
 			.swiper-container.category-slider.pt-4.pt-lg-0
 				.swiper-wrapper.row
 					.col-sm-6.col-lg-4.category-item-container.swiper-slide
-						.category-item
+						.category-item.wow.fadeInUp(data-wow-duration="1s")
 							img.category-item__img(src="img/content/category-item1.png", alt="")
 							.category-item__title Арахисовая <br>паста
 							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
 								| В каталог
 								+icon('arrow-long')
 					.col-sm-6.col-lg-4.category-item-container.swiper-slide
-						.category-item
+						.category-item.wow.fadeInUp(data-wow-duration="1s")
 							img.category-item__img(src="img/content/category-item2.png", alt="")
 							.category-item__title Классический<br> мёд
 							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
 								| В каталог
 								+icon('arrow-long')
 					.col-sm-6.col-lg-4.category-item-container.swiper-slide
-						.category-item
+						.category-item.wow.fadeInUp(data-wow-duration="1s")
 							img.category-item__img(src="img/content/category-item3.png", alt="")
 							.category-item__title Крем-мёд
 							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
 								| В каталог
 								+icon('arrow-long')
 					.col-sm-6.col-lg-4.category-item-container.swiper-slide
-						.category-item
+						.category-item.wow.fadeInUp(data-wow-duration="1s")
 							.category-item__title Джем
 							img.category-item__img(src="img/content/category-item4.png", alt="")
 							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
 								| В каталог
 								+icon('arrow-long')
 					.col-sm-6.col-lg-4.category-item-container.swiper-slide
-						.category-item
+						.category-item.wow.fadeInUp(data-wow-duration="1s")
 							img.category-item__img(src="img/content/category-item3.png", alt="")
 							.category-item__title Наборы<br>и сувениры
 							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
 								| В каталог
 								+icon('arrow-long')
 					.col-sm-6.col-lg-4.category-item-container.swiper-slide
-						.category-item
+						.category-item.wow.fadeInUp(data-wow-duration="1s")
 							img.category-item__img(src="img/content/category-item5.png", alt="")
 							.category-item__title Пчелопродукты
 							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
 								| В каталог
 								+icon('arrow-long')
 					.col-sm-6.col-lg-4.category-item-container.swiper-slide
-						.category-item
+						.category-item.wow.fadeInUp(data-wow-duration="1s")
 							img.category-item__img(src="img/content/category-item6.png", alt="")
 							.category-item__title Травяные<br>сборы
 							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
 								| В каталог
 								+icon('arrow-long')
 					.col-sm-6.col-lg-4.category-item-container.swiper-slide
-						.category-item
+						.category-item.wow.fadeInUp(data-wow-duration="1s")
 							img.category-item__img(src="img/content/category-item4.png", alt="")
 							.category-item__title Премиум<br>продукция
 							a.category-item__link.stretched-link.arrow-link.arrow-link--white(href="")
@@ -153,11 +158,12 @@ block content
 	section.section-hits.pattern.pattern--right
 		.container
 			.section-hits-title.d-flex.align-items-baseline
-				h1 <span>Хиты продаж</span>
-				h1.not-active <span>Новинки</span>
+				h1.mb-0.divider <span>Хиты продаж</span>
+				h1.mb-0.not-active <span>Новинки</span>
 			.swiper-container.card-list.card-list--hits
 				.swiper-wrapper
 					.swiper-slide.card.text-center
+						a.stretched-link(href="")
 						.card__body
 							img.card__img(src="img/content/category-item2.png", alt="")
 							.card__title Алтайский натуральный сотовый мёд
@@ -177,6 +183,7 @@ block content
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
 					.swiper-slide.card.text-center
+						a.stretched-link(href="")
 						.card__body
 							img.card__img(src="img/content/category-item7.png", alt="")
 							.card__title Алтайский натуральный сотовый мёд
@@ -196,6 +203,7 @@ block content
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
 					.swiper-slide.card.text-center
+						a.stretched-link(href="")
 						.card__body
 							img.card__img(src="img/content/category-item3.png", alt="")
 							.card__title Алтайский натуральный сотовый мёд
@@ -215,6 +223,7 @@ block content
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
 					.swiper-slide.card.text-center
+						a.stretched-link(href="")
 						.card__body
 							img.card__img(src="img/content/category-item4.png", alt="")
 							.card__title Алтайский натуральный сотовый мёд
@@ -234,6 +243,7 @@ block content
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
 					.swiper-slide.card.text-center
+						a.stretched-link(href="")
 						.card__body
 							img.card__img(src="img/content/category-item2.png", alt="")
 							.card__title Алтайский натуральный сотовый мёд
@@ -255,6 +265,7 @@ block content
 			.swiper-container.card-list.card-list--new.not-active
 				.swiper-wrapper
 					.swiper-slide.card.text-center
+						a.stretched-link(href="")
 						.card__body
 							img.card__img(src="img/content/category-item1.png", alt="")
 							.card__title Алтайский натуральный сотовый мёд
@@ -274,6 +285,7 @@ block content
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
 					.swiper-slide.card.text-center
+						a.stretched-link(href="")
 						.card__body
 							img.card__img(src="img/content/category-item2.png", alt="")
 							.card__title Алтайский натуральный сотовый мёд
@@ -293,6 +305,7 @@ block content
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
 					.swiper-slide.card.text-center
+						a.stretched-link(href="")
 						.card__body
 							img.card__img(src="img/content/category-item7.png", alt="")
 							.card__title Алтайский натуральный сотовый мёд
@@ -312,6 +325,7 @@ block content
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
 					.swiper-slide.card.text-center
+						a.stretched-link(href="")
 						.card__body
 							img.card__img(src="img/content/category-item3.png", alt="")
 							.card__title Алтайский натуральный сотовый мёд
@@ -331,6 +345,7 @@ block content
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
 					.swiper-slide.card.text-center
+						a.stretched-link(href="")
 						.card__body
 							img.card__img(src="img/content/category-item4.png", alt="")
 							.card__title Алтайский натуральный сотовый мёд
@@ -384,7 +399,7 @@ block content
 		.container.z-index.position-relative
 			h1 Новости
 			.row.mb-5
-				.col-lg-4.mb-4.mb-lg-0
+				.col-lg-4.mb-4.mb-lg-0.wow.fadeInUp(data-wow-duration="1s")
 					.news
 						.news__img(style="background: url('/img/content/news2.jpg') no-repeat center/cover")
 						.news__content
@@ -394,7 +409,7 @@ block content
 							.news__date.text-small
 								+icon('calendar','mb-1 mr-2')
 								| 1 октября 2019
-				.col-lg-4.mb-4.mb-lg-0
+				.col-lg-4.mb-4.mb-lg-0.wow.fadeInUp(data-wow-duration="1s")
 					.news
 						.news__img(style="background: url('/img/content/news1.jpg') no-repeat center/cover")
 						.news__content
@@ -404,7 +419,7 @@ block content
 							.news__date.text-small
 								+icon('calendar','mb-1 mr-2')
 								| 1 октября 2019
-				.col-lg-4.mb-4.mb-lg-0
+				.col-lg-4.mb-4.mb-lg-0.wow.fadeInUp(data-wow-duration="1s")
 					.news
 						.news__img(style="background: url('/img/content/news3.jpg') no-repeat center/cover")
 						.news__content
@@ -422,6 +437,7 @@ block content
 			.swiper-container.reviews-list
 				.swiper-wrapper
 					.swiper-slide.card.text-center
+						a.stretched-link(href="")
 						.card__body
 							.card__img.card-photo(style='background: url("img/content/reviews1.jpg") no-repeat center')
 							.card__name.b.mb-1 Александр Иванов
@@ -442,6 +458,7 @@ block content
 								клиент и знакомым посоветую.
 								Спасибо за хорошее обслуживание!
 					.swiper-slide.card.text-center
+						a.stretched-link(href="")
 						.card__body
 							.card__img.card-photo(style='background: url("img/content/reviews2.jpg") no-repeat center')
 							.card__name.b.mb-1 Ольга Викторовна
@@ -460,6 +477,7 @@ block content
 								Всё это признаки натурального мёда.
 								Я остался доволен покупкой, теперь заказываю здесь мед постоянно
 					.swiper-slide.card.text-center
+						a.stretched-link(href="")
 						.card__body
 							.card__img.card-photo(style='background: url("img/content/reviews3.jpg") no-repeat center')
 							.card__name.b.mb-1 Григорий

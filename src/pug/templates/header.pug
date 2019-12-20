@@ -2,12 +2,12 @@ header.header
 	.container.z-index.position-relative
 		.header-top.d-lg-flex.d-none.justify-content-between
 			ul.nav.not-decoration.d-flex.mx-n1
-				li: a.link.p-2(href="") О компании
-				li: a.link.p-2(href="") Акции и новости
-				li: a.link.p-2(href="") Контакты
-				li: a.link.p-2(href="") Оплата и доставка
-				li: a.link.p-2(href="") Документы
-				li: a.link.p-2(href="") Отзывы
+				li: a.link.p-2.b(href="") О компании
+				li: a.link.p-2.b(href="") Акции и новости
+				li: a.link.p-2.b(href="") Контакты
+				li: a.link.p-2.b(href="") Оплата и доставка
+				li: a.link.p-2.b(href="") Документы
+				li: a.link.p-2.b(href="") Отзывы
 			.lk-container.d-flex
 				.change-city
 					select#city.border-0
@@ -16,9 +16,9 @@ header.header
 						option(value="") Москва
 				.login.d-flex.align-items-center
 					+icon('user','icon--small mr-2')
-					a(href="").link.mr-1 Вход
+					a(href="").link.mr-1(data-toggle="modal" data-target="#lk") Вход
 					| |
-					a(href="").link.ml-1 Регистрация
+					a(href="").link.ml-1(data-toggle="modal" data-target="#lk") Регистрация
 		.row.header-body
 			.col-3.d-lg-none
 				.hamburger.hamburger--squeeze.d-flex
@@ -30,12 +30,13 @@ header.header
 				.phone-block__container.d-inline-block
 					a.phone-block__link.link.text-big(href="tel:+79059891889"): b +7 (905) 989-18-89
 					.phone-block__text Ежедневно  4:00 - 17:00
-			.col-6.col-lg-2.logo(href="/")
+			a.col-6.col-lg-2.logo(href="/")
 				+icon('logo','w-100 h-100')
 			.col-3.col-lg-5.d-flex.align-items-center.justify-content-end
 				.search-container.d-lg-inline-block.mr-5.d-none
 					input.text-small.search.border-0.rounded-pill.px-3.w-100(type="search" placeholder="Что вы ищете?")
 				.basket
+					.market-item-count 3
 		.row.d-lg-flex.d-none
 			.col-1
 				.hamburger.hamburger--squeeze.d-flex

@@ -16,6 +16,22 @@ $(document).ready(function () {
 		}
 	});
 
+  $('.count-block__minus').click(function () {
+    var $input = $(this).parent().find('.count-block__value');
+    var count = parseInt($input.val()) - 1;
+    count = count < 1 ? 1 : count;
+    $input.val(count);
+    $input.change();
+    return false;
+  });
+
+  $('.count-block__plus').click(function () {
+    var $input = $(this).parent().find('.count-block__value');
+    $input.val(parseInt($input.val()) + 1);
+    $input.change();
+    return false;
+  })
+
   $(".js-range-slider").ionRangeSlider({
     type: "double",
     min: 0,
@@ -71,7 +87,6 @@ function initSwiper() {
 				$('.swiper-container.category-slider').children('.swiper-wrapper').removeClass('row')  
         categorySlider = new Swiper('.swiper-container.category-slider', {            
             spaceBetween: 0,
-						freeMode: true,
 						speed: 400,
 						grabCursor: true,
 						navigation: {
@@ -95,7 +110,8 @@ initSwiper();
 
 //Swiper plugin initialization on window resize
 $(window).on('resize', function(){
-    initSwiper();        
+		initSwiper();        
+		removeRow()
 });
 
 	var partnersSlider = new Swiper('.swiper-container.partners-list', {
@@ -194,6 +210,32 @@ $(window).on('resize', function(){
 	// });
 
 
+	$('.sort-icon').on('click', function(){
+		if ($(this).hasClass('active')) {}
+		else {
+			$('.sort-icon').toggleClass('active')
+			$('.catalog-list').toggleClass('catalog-list--row')
+		}
+	})
 
+	function removeRow() {
+		if ($(window).width() < 1200) {
+			$('.catalog-list').removeClass('catalog-list--row')
+				$('.icon-row').removeClass('active')
+				$('.icon-column').addClass('active')
+		}
+	}
 
+	var path = anime.path('.vector path')
+
+	anime({
+		targets: '.bee',
+		translateX: path('x'),
+		translateY: path('y'),
+		rotate: path('angle'),
+		easing: 'linear',
+		duration: 5000,
+		loop: true,
+		// delay: 2000
+	});
 })

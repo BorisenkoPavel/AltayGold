@@ -37,6 +37,9 @@
   .section-news:after
     height: 120px
     background: url(/img/general/bg-news-bottom.svg) no-repeat bottom center/1200px
+  .anime-block
+    display: none
+
 // ≥992px
 +media-breakpoint-down(md)
   .header-body
@@ -74,11 +77,40 @@
       transform: scale(1.04)
   .section-sign
     padding-bottom: 0
+  .filter-item__price
+    margin-bottom: 0.2rem
 // ≥576px
 +media-breakpoint-down(xs)
   .action-item
     height: 280px!important
     margin-bottom: 1.5rem!important
+  .banner-next,.banner-prev
+    display: none
+  #card 
+    .modal-content
+      padding: 0
+    .card__footer
+      flex-wrap: wrap
+    .card__basket-container
+      width: 100%
+    .card__basket
+      margin-top: 1.25rem
+      width: 100%
+      border-radius: 25px
+      border: 1px solid transparent
+      background-color: #FECC00
+    .card__basket span
+      opacity: 1
+    .card__basket .basket-icon
+      left: 20px
+      right: auto
+      opacity: 1!important
+  .section-hits-title
+    justify-content: space-between
+    h1
+      margin-right: 0
+    .divider:before
+      display: none
 /*==========  mobile First  ==========*/
 
 // ≤576px
@@ -89,6 +121,26 @@
 
 // ≤992px
 +media-breakpoint-up(lg)
-  
+  .swiper-container.category-slider
+    overflow: visible
+  #card
+    .modal-dialog
+      max-width: 977px
+    .card-container
+      padding: 5rem 4.375rem
+      display: flex
+      &>.card__img
+        transform: translate(0)
+        position: static
+        display: block
+        max-height: 270px
+        height: 500px
+        margin-left: 0
+    .card__body .card__img
+      display: none
+    .card
+      padding: 0
+      max-width: 420px
+      width: 100%
 // ≤1200px
 +media-breakpoint-up(xl)

@@ -12,7 +12,7 @@ block content
 					li.breadcrumb-item
 						a.link(href='#') Каталог
 					li.breadcrumb-item.active(aria-current='page') Классический мёд
-			.row
+			.row.mb-4.mb-lg-0
 				.col-lg-5
 					h1 Классический мёд (<span>32</span>)
 					p.
@@ -20,24 +20,24 @@ block content
 						удобной упаковки по 250 и 350 гр. Всё в наличии.
 						Минимальный заказ — 3000 рублей. Доставим ваш заказ
 						от 3 дней. Закажите сейчас и получите скидку 3%!
-				.col-lg-6.offset-lg-1
+				.col-lg-6.offset-lg-1.d-none.d-lg-block
 					+pic('cups-img','general','cups','png')
 			.filter-block.row.mb-5
-				.col-md-3.col-lg-2
+				.col-md-3.col-lg-2.mb-3.mb-md-0
 					label.filter-item
 						.filter-item__price Сортировка
 						select#sort
 							option(value="Популярные" selected) Популярные
 							option(value="Любой") Любой
 							option(value="Красный") Красный
-				.col-md-3.col-lg-2
+				.col-md-3.col-lg-2.mb-3.mb-md-0
 					label.filter-item
 						.filter-item__price Консистенция
 						select#cons
 							option(value="Популярные" selected) Популярные
 							option(value="Любой") Любой
 							option(value="Красный") Красный
-				.col-md-3.col-lg-2
+				.col-md-3.col-lg-2.mb-3.mb-md-0
 					label.filter-item
 						.filter-item__price Цвет
 						select#color
@@ -48,7 +48,7 @@ block content
 					label.filter-item
 						.filter-item__price.mb-0 Цена (<span class="rub">P</span>)
 						input(type="text" class="js-range-slider" name="range" value="")
-				.col-md-3.col-lg-3.filter-item.d-flex.align-items-end
+				.col-md-3.col-lg-3.filter-item.d-none.d-lg-flex.align-items-end
 					.range-input-container.d-flex.justify-content-between.align-items-center
 						input.input-text(type="text")
 						input.input-text(type="text")
@@ -60,283 +60,500 @@ block content
 					a(href="").text-danger.link
 						+icon('Frame','mr-2') 
 						span.dotted названию A-Я
-				.sort-item.sort-item--view-icon Вид:
+				.sort-item.sort-item--view-icon.d-none.d-xl-flex Вид:
 						+icon('row','sort-icon') 
 						+icon('column','sort-icon active')
-			.row.catalog-list
-				.col-lg-3.card-container
-					.card.card--new.card--hit
+			.row.catalog-list.mb-5
+				.col-sm-6.col-lg-4.col-xl-3.card-container
+					.card.card--new.card--hit(data-toggle="modal" data-target="#card")
+						a.stretched-link(href="")
 						.card__option
 							.card__option-item.card__option-item--new.bg-secondary.mr-1 Новинка
 							.card__option-item.card__option-item--hit.bg-primary.text-white Хит
 						.card__body
 							img.card__img(src="img/content/category-item2.png", alt="")
-							.card__title Алтайский натуральный сотовый мёд
-							.card__category.text-small Мёд классический
-							.card__rating
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
+							.card__name
+								.card__title Алтайский натуральный сотовый мёд
+								.card__category.text-small Мёд классический
+								.card__rating
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
 							hr.my-3.border-light
-						.card__footer
-							.card__weight.text-black-50.text-small.text-left 250 гр.
-							.card__buy.d-flex.justify-content-between.align-items-center
+						.card__feature-list.d-flex
+							.card__feature-color.d-flex.justify-content-between.divider
+								span.card__feature-name Цвет
+								span Жёлтый
+							.card__feature-comp.d-flex.justify-content-between
+								span.card__feature-name Консистенция
+								span Жидкая
+							.card__feature-consist.d-flex.justify-content-between
+								span.card__feature-name Состав
+								span Без добавок
+						.card__footer.d-flex.justify-content-between.align-items-end
+							.card__specs
+								.card__weight.text-black-50.text-small.text-left 250 гр.
 								.card__price 241 <span class="rub">P</span>
+							.count-block.align-items-end
+								.count-block__minus -
+								input.count-block__value(type='text', value='1')
+								.count-block__plus +
+							.card__basket-container
 								.card__basket
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
-				.col-lg-3.card-container
-					.card.card--hit
+				.col-sm-6.col-lg-4.col-xl-3.card-container
+					.card.card--hit(data-toggle="modal" data-target="#card")
+						a.stretched-link(href="")
 						.card__option
 							.card__option-item.card__option-item--new.bg-secondary.mr-1 Новинка
 							.card__option-item.card__option-item--hit.bg-primary.text-white Хит
 						.card__body
 							img.card__img(src="img/content/category-item3.png", alt="")
-							.card__title Алтайский натуральный сотовый мёд
-							.card__category.text-small Мёд классический
-							.card__rating
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
+							.card__name
+								.card__title Алтайский натуральный сотовый мёд
+								.card__category.text-small Мёд классический
+								.card__rating
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
 							hr.my-3.border-light
-						.card__footer
-							.card__weight.text-black-50.text-small.text-left 250 гр.
-							.card__buy.d-flex.justify-content-between.align-items-center
+						.card__feature-list.d-flex
+							.card__feature-color.d-flex.justify-content-between.divider
+								span.card__feature-name Цвет
+								span Жёлтый
+							.card__feature-comp.d-flex.justify-content-between
+								span.card__feature-name Консистенция
+								span Жидкая
+							.card__feature-consist.d-flex.justify-content-between
+								span.card__feature-name Состав
+								span Без добавок
+						.card__footer.d-flex.justify-content-between.align-items-end
+							.card__specs
+								.card__weight.text-black-50.text-small.text-left 250 гр.
 								.card__price 241 <span class="rub">P</span>
+							.count-block.align-items-end
+								.count-block__minus -
+								input.count-block__value(type='text', value='1')
+								.count-block__plus +
+							.card__basket-container
 								.card__basket
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
-				.col-lg-3.card-container
-					.card.card--new
+				.col-sm-6.col-lg-4.col-xl-3.card-container
+					.card.card--new(data-toggle="modal" data-target="#card")
+						a.stretched-link(href="")
 						.card__option
 							.card__option-item.card__option-item--new.bg-secondary.mr-1 Новинка
 							.card__option-item.card__option-item--hit.bg-primary.text-white Хит
 						.card__body
 							img.card__img(src="img/content/category-item1.png", alt="")
-							.card__title Алтайский натуральный сотовый мёд
-							.card__category.text-small Мёд классический
-							.card__rating
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
+							.card__name
+								.card__title Алтайский натуральный сотовый мёд
+								.card__category.text-small Мёд классический
+								.card__rating
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
 							hr.my-3.border-light
-						.card__footer
-							.card__weight.text-black-50.text-small.text-left 250 гр.
-							.card__buy.d-flex.justify-content-between.align-items-center
+						.card__feature-list.d-flex
+							.card__feature-color.d-flex.justify-content-between.divider
+								span.card__feature-name Цвет
+								span Жёлтый
+							.card__feature-comp.d-flex.justify-content-between
+								span.card__feature-name Консистенция
+								span Жидкая
+							.card__feature-consist.d-flex.justify-content-between
+								span.card__feature-name Состав
+								span Без добавок
+						.card__footer.d-flex.justify-content-between.align-items-end
+							.card__specs
+								.card__weight.text-black-50.text-small.text-left 250 гр.
 								.card__price 241 <span class="rub">P</span>
+							.count-block.align-items-end
+								.count-block__minus -
+								input.count-block__value(type='text', value='1')
+								.count-block__plus +
+							.card__basket-container
 								.card__basket
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
-				.col-lg-3.card-container
-					.card.card--new.card--hit
+				.col-sm-6.col-lg-4.col-xl-3.card-container
+					.card.card--new.card--hit(data-toggle="modal" data-target="#card")
+						a.stretched-link(href="")
 						.card__option
 							.card__option-item.card__option-item--new.bg-secondary.mr-1 Новинка
 							.card__option-item.card__option-item--hit.bg-primary.text-white Хит
 						.card__body
 							img.card__img(src="img/content/category-item2.png", alt="")
-							.card__title Алтайский натуральный сотовый мёд
-							.card__category.text-small Мёд классический
-							.card__rating
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
+							.card__name
+								.card__title Алтайский натуральный сотовый мёд
+								.card__category.text-small Мёд классический
+								.card__rating
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
 							hr.my-3.border-light
-						.card__footer
-							.card__weight.text-black-50.text-small.text-left 250 гр.
-							.card__buy.d-flex.justify-content-between.align-items-center
+						.card__feature-list.d-flex
+							.card__feature-color.d-flex.justify-content-between.divider
+								span.card__feature-name Цвет
+								span Жёлтый
+							.card__feature-comp.d-flex.justify-content-between
+								span.card__feature-name Консистенция
+								span Жидкая
+							.card__feature-consist.d-flex.justify-content-between
+								span.card__feature-name Состав
+								span Без добавок
+						.card__footer.d-flex.justify-content-between.align-items-end
+							.card__specs
+								.card__weight.text-black-50.text-small.text-left 250 гр.
 								.card__price 241 <span class="rub">P</span>
+							.count-block.align-items-end
+								.count-block__minus -
+								input.count-block__value(type='text', value='1')
+								.count-block__plus +
+							.card__basket-container
 								.card__basket
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
-				.col-lg-3.card-container
-					.card.card--hit
+				.col-sm-6.col-lg-4.col-xl-3.card-container
+					.card.card--hit(data-toggle="modal" data-target="#card")
+						a.stretched-link(href="")
 						.card__option
 							.card__option-item.card__option-item--new.bg-secondary.mr-1 Новинка
 							.card__option-item.card__option-item--hit.bg-primary.text-white Хит
 						.card__body
 							img.card__img(src="img/content/category-item3.png", alt="")
-							.card__title Алтайский натуральный сотовый мёд
-							.card__category.text-small Мёд классический
-							.card__rating
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
+							.card__name
+								.card__title Алтайский натуральный сотовый мёд
+								.card__category.text-small Мёд классический
+								.card__rating
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
 							hr.my-3.border-light
-						.card__footer
-							.card__weight.text-black-50.text-small.text-left 250 гр.
-							.card__buy.d-flex.justify-content-between.align-items-center
+						.card__feature-list.d-flex
+							.card__feature-color.d-flex.justify-content-between.divider
+								span.card__feature-name Цвет
+								span Жёлтый
+							.card__feature-comp.d-flex.justify-content-between
+								span.card__feature-name Консистенция
+								span Жидкая
+							.card__feature-consist.d-flex.justify-content-between
+								span.card__feature-name Состав
+								span Без добавок
+						.card__footer.d-flex.justify-content-between.align-items-end
+							.card__specs
+								.card__weight.text-black-50.text-small.text-left 250 гр.
 								.card__price 241 <span class="rub">P</span>
+							.count-block.align-items-end
+								.count-block__minus -
+								input.count-block__value(type='text', value='1')
+								.count-block__plus +
+							.card__basket-container
 								.card__basket
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
-				.col-lg-3.card-container
-					.card.card--new
+				.col-sm-6.col-lg-4.col-xl-3.card-container
+					.card.card--new(data-toggle="modal" data-target="#card")
+						a.stretched-link(href="")
 						.card__option
 							.card__option-item.card__option-item--new.bg-secondary.mr-1 Новинка
 							.card__option-item.card__option-item--hit.bg-primary.text-white Хит
 						.card__body
 							img.card__img(src="img/content/category-item1.png", alt="")
-							.card__title Алтайский натуральный сотовый мёд
-							.card__category.text-small Мёд классический
-							.card__rating
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
+							.card__name
+								.card__title Алтайский натуральный сотовый мёд
+								.card__category.text-small Мёд классический
+								.card__rating
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
 							hr.my-3.border-light
-						.card__footer
-							.card__weight.text-black-50.text-small.text-left 250 гр.
-							.card__buy.d-flex.justify-content-between.align-items-center
+						.card__feature-list.d-flex
+							.card__feature-color.d-flex.justify-content-between.divider
+								span.card__feature-name Цвет
+								span Жёлтый
+							.card__feature-comp.d-flex.justify-content-between
+								span.card__feature-name Консистенция
+								span Жидкая
+							.card__feature-consist.d-flex.justify-content-between
+								span.card__feature-name Состав
+								span Без добавок
+						.card__footer.d-flex.justify-content-between.align-items-end
+							.card__specs
+								.card__weight.text-black-50.text-small.text-left 250 гр.
 								.card__price 241 <span class="rub">P</span>
+							.count-block.align-items-end
+								.count-block__minus -
+								input.count-block__value(type='text', value='1')
+								.count-block__plus +
+							.card__basket-container
 								.card__basket
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
-				.col-lg-3.card-container
-					.card.card--new.card--hit
+				.col-sm-6.col-lg-4.col-xl-3.card-container
+					.card.card--new.card--hit(data-toggle="modal" data-target="#card")
+						a.stretched-link(href="")
 						.card__option
 							.card__option-item.card__option-item--new.bg-secondary.mr-1 Новинка
 							.card__option-item.card__option-item--hit.bg-primary.text-white Хит
 						.card__body
 							img.card__img(src="img/content/category-item2.png", alt="")
-							.card__title Алтайский натуральный сотовый мёд
-							.card__category.text-small Мёд классический
-							.card__rating
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
+							.card__name
+								.card__title Алтайский натуральный сотовый мёд
+								.card__category.text-small Мёд классический
+								.card__rating
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
 							hr.my-3.border-light
-						.card__footer
-							.card__weight.text-black-50.text-small.text-left 250 гр.
-							.card__buy.d-flex.justify-content-between.align-items-center
+						.card__feature-list.d-flex
+							.card__feature-color.d-flex.justify-content-between.divider
+								span.card__feature-name Цвет
+								span Жёлтый
+							.card__feature-comp.d-flex.justify-content-between
+								span.card__feature-name Консистенция
+								span Жидкая
+							.card__feature-consist.d-flex.justify-content-between
+								span.card__feature-name Состав
+								span Без добавок
+						.card__footer.d-flex.justify-content-between.align-items-end
+							.card__specs
+								.card__weight.text-black-50.text-small.text-left 250 гр.
 								.card__price 241 <span class="rub">P</span>
+							.count-block.align-items-end
+								.count-block__minus -
+								input.count-block__value(type='text', value='1')
+								.count-block__plus +
+							.card__basket-container
 								.card__basket
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
-				.col-lg-3.card-container
-					.card.card--hit
+				.col-sm-6.col-lg-4.col-xl-3.card-container
+					.card.card--hit(data-toggle="modal" data-target="#card")
+						a.stretched-link(href="")
 						.card__option
 							.card__option-item.card__option-item--new.bg-secondary.mr-1 Новинка
 							.card__option-item.card__option-item--hit.bg-primary.text-white Хит
 						.card__body
 							img.card__img(src="img/content/category-item3.png", alt="")
-							.card__title Алтайский натуральный сотовый мёд
-							.card__category.text-small Мёд классический
-							.card__rating
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
+							.card__name
+								.card__title Алтайский натуральный сотовый мёд
+								.card__category.text-small Мёд классический
+								.card__rating
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
 							hr.my-3.border-light
-						.card__footer
-							.card__weight.text-black-50.text-small.text-left 250 гр.
-							.card__buy.d-flex.justify-content-between.align-items-center
+						.card__feature-list.d-flex
+							.card__feature-color.d-flex.justify-content-between.divider
+								span.card__feature-name Цвет
+								span Жёлтый
+							.card__feature-comp.d-flex.justify-content-between
+								span.card__feature-name Консистенция
+								span Жидкая
+							.card__feature-consist.d-flex.justify-content-between
+								span.card__feature-name Состав
+								span Без добавок
+						.card__footer.d-flex.justify-content-between.align-items-end
+							.card__specs
+								.card__weight.text-black-50.text-small.text-left 250 гр.
 								.card__price 241 <span class="rub">P</span>
+							.count-block.align-items-end
+								.count-block__minus -
+								input.count-block__value(type='text', value='1')
+								.count-block__plus +
+							.card__basket-container
 								.card__basket
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
-				.col-lg-3.card-container
-					.card.card--new
+				.col-sm-6.col-lg-4.col-xl-3.card-container
+					.card.card--new(data-toggle="modal" data-target="#card")
+						a.stretched-link(href="")
 						.card__option
 							.card__option-item.card__option-item--new.bg-secondary.mr-1 Новинка
 							.card__option-item.card__option-item--hit.bg-primary.text-white Хит
 						.card__body
 							img.card__img(src="img/content/category-item1.png", alt="")
-							.card__title Алтайский натуральный сотовый мёд
-							.card__category.text-small Мёд классический
-							.card__rating
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
+							.card__name
+								.card__title Алтайский натуральный сотовый мёд
+								.card__category.text-small Мёд классический
+								.card__rating
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
 							hr.my-3.border-light
-						.card__footer
-							.card__weight.text-black-50.text-small.text-left 250 гр.
-							.card__buy.d-flex.justify-content-between.align-items-center
+						.card__feature-list.d-flex
+							.card__feature-color.d-flex.justify-content-between.divider
+								span.card__feature-name Цвет
+								span Жёлтый
+							.card__feature-comp.d-flex.justify-content-between
+								span.card__feature-name Консистенция
+								span Жидкая
+							.card__feature-consist.d-flex.justify-content-between
+								span.card__feature-name Состав
+								span Без добавок
+						.card__footer.d-flex.justify-content-between.align-items-end
+							.card__specs
+								.card__weight.text-black-50.text-small.text-left 250 гр.
 								.card__price 241 <span class="rub">P</span>
+							.count-block.align-items-end
+								.count-block__minus -
+								input.count-block__value(type='text', value='1')
+								.count-block__plus +
+							.card__basket-container
 								.card__basket
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
-				.col-lg-3.card-container
-					.card.card--new.card--hit
+				.col-sm-6.col-lg-4.col-xl-3.card-container
+					.card.card--new.card--hit(data-toggle="modal" data-target="#card")
+						a.stretched-link(href="")
 						.card__option
 							.card__option-item.card__option-item--new.bg-secondary.mr-1 Новинка
 							.card__option-item.card__option-item--hit.bg-primary.text-white Хит
 						.card__body
 							img.card__img(src="img/content/category-item2.png", alt="")
-							.card__title Алтайский натуральный сотовый мёд
-							.card__category.text-small Мёд классический
-							.card__rating
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
+							.card__name
+								.card__title Алтайский натуральный сотовый мёд
+								.card__category.text-small Мёд классический
+								.card__rating
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
 							hr.my-3.border-light
-						.card__footer
-							.card__weight.text-black-50.text-small.text-left 250 гр.
-							.card__buy.d-flex.justify-content-between.align-items-center
+						.card__feature-list.d-flex
+							.card__feature-color.d-flex.justify-content-between.divider
+								span.card__feature-name Цвет
+								span Жёлтый
+							.card__feature-comp.d-flex.justify-content-between
+								span.card__feature-name Консистенция
+								span Жидкая
+							.card__feature-consist.d-flex.justify-content-between
+								span.card__feature-name Состав
+								span Без добавок
+						.card__footer.d-flex.justify-content-between.align-items-end
+							.card__specs
+								.card__weight.text-black-50.text-small.text-left 250 гр.
 								.card__price 241 <span class="rub">P</span>
+							.count-block.align-items-end
+								.count-block__minus -
+								input.count-block__value(type='text', value='1')
+								.count-block__plus +
+							.card__basket-container
 								.card__basket
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
-				.col-lg-3.card-container
-					.card.card--hit
+				.col-sm-6.col-lg-4.col-xl-3.card-container
+					.card.card--hit(data-toggle="modal" data-target="#card")
+						a.stretched-link(href="")
 						.card__option
 							.card__option-item.card__option-item--new.bg-secondary.mr-1 Новинка
 							.card__option-item.card__option-item--hit.bg-primary.text-white Хит
 						.card__body
 							img.card__img(src="img/content/category-item3.png", alt="")
-							.card__title Алтайский натуральный сотовый мёд
-							.card__category.text-small Мёд классический
-							.card__rating
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
+							.card__name
+								.card__title Алтайский натуральный сотовый мёд
+								.card__category.text-small Мёд классический
+								.card__rating
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
 							hr.my-3.border-light
-						.card__footer
-							.card__weight.text-black-50.text-small.text-left 250 гр.
-							.card__buy.d-flex.justify-content-between.align-items-center
+						.card__feature-list.d-flex
+							.card__feature-color.d-flex.justify-content-between.divider
+								span.card__feature-name Цвет
+								span Жёлтый
+							.card__feature-comp.d-flex.justify-content-between
+								span.card__feature-name Консистенция
+								span Жидкая
+							.card__feature-consist.d-flex.justify-content-between
+								span.card__feature-name Состав
+								span Без добавок
+						.card__footer.d-flex.justify-content-between.align-items-end
+							.card__specs
+								.card__weight.text-black-50.text-small.text-left 250 гр.
 								.card__price 241 <span class="rub">P</span>
+							.count-block.align-items-end
+								.count-block__minus -
+								input.count-block__value(type='text', value='1')
+								.count-block__plus +
+							.card__basket-container
 								.card__basket
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
-				.col-lg-3.card-container
-					.card.card--new
+				.col-sm-6.col-lg-4.col-xl-3.card-container
+					.card.card--new(data-toggle="modal" data-target="#card")
+						a.stretched-link(href="")
 						.card__option
 							.card__option-item.card__option-item--new.bg-secondary.mr-1 Новинка
 							.card__option-item.card__option-item--hit.bg-primary.text-white Хит
 						.card__body
 							img.card__img(src="img/content/category-item1.png", alt="")
-							.card__title Алтайский натуральный сотовый мёд
-							.card__category.text-small Мёд классический
-							.card__rating
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
-								+icon('star')
+							.card__name
+								.card__title Алтайский натуральный сотовый мёд
+								.card__category.text-small Мёд классический
+								.card__rating
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
+									+icon('star')
 							hr.my-3.border-light
-						.card__footer
-							.card__weight.text-black-50.text-small.text-left 250 гр.
-							.card__buy.d-flex.justify-content-between.align-items-center
+						.card__feature-list.d-flex
+							.card__feature-color.d-flex.justify-content-between.divider
+								span.card__feature-name Цвет
+								span Жёлтый
+							.card__feature-comp.d-flex.justify-content-between
+								span.card__feature-name Консистенция
+								span Жидкая
+							.card__feature-consist.d-flex.justify-content-between
+								span.card__feature-name Состав
+								span Без добавок
+						.card__footer.d-flex.justify-content-between.align-items-end
+							.card__specs
+								.card__weight.text-black-50.text-small.text-left 250 гр.
 								.card__price 241 <span class="rub">P</span>
+							.count-block.align-items-end
+								.count-block__minus -
+								input.count-block__value(type='text', value='1')
+								.count-block__plus +
+							.card__basket-container
 								.card__basket
 									span.b Купить
 									img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
+	section.section-sign
+		.container.d-none.d-md-block
+			form.row
+				.col
+					.subtitle.b Подписывайтесь<br>на новости и акции
+				.col
+					input.input-text.input--long(type="mail" placeholder="Оставьте свой e-mail")
+				.col
+					button.btn.border-0 Подписаться
+				.col.d-lg-flex.d-none.align-items-center
+					+icon('card1','icon-card mx-1')
+					+icon('card2','icon-card mx-1')
+					+icon('card3','icon-card mx-1')

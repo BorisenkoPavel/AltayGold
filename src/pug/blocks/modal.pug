@@ -1,19 +1,72 @@
-#modal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='modalTitle' aria-hidden='true')
+#lk.modal.fade(tabindex='-1' role='dialog' aria-labelledby='modalTitle' aria-hidden='true')
 	.modal-dialog.modal-dialog-centered(role='document')
-		.modal-content.p-5
-			.modal-header.p-0.border-0
-				h2 Забронировать
-				button.close(type='button' data-dismiss='modal' aria-label='Close')
-					span(aria-hidden='true') &times;
-			form.mb-4
+		.modal-content
+			.modal-header.p-0.pt-4.border-bottom.border-secondary
+				h2.d-flex.w-100.align-items-center Личный кабинет
+					button.close(type='button' data-dismiss='modal' aria-label='Close')
+						+icon('error')
+			form.my-4
 				label.label-container.error
+					span.label-text.text-big.b Логин
 					input.input-text(type="text")
-					span.label-text Представьтесь, пожалуйста
 				label.label-container
+					span.label-text.text-big.b Пароль 
 					input.input-text(type="text")
-					span.label-text Ваш номер телефона 
-				
-				label.label-container
+				.btn-container.d-flex.justify-content-between.align-items-center.pt-2.mb-3
+					button.btn.btn-secondary.justify-content-center(type='submit') Войти
+					a(href="") Забыли пароль?
+				label.label-container.mb-5
 					input.checkbox.h-auto.d-inline-block(type="checkbox") 
-					span.text-small: small С <a href="">политикой конфиденциальности</a> ознакомлен(а), даю согласие на обработку моих персональных данных
-				button.btn.justify-content-center(type='submit') Отправить
+					span Запомнить меня
+				p Если вы новый пользователь, то вам необходимо заполнить форму регистрации на нашем сайте.
+				button.btn.btn-secondary Зарегистрироваться
+
+#card.modal.fade(tabindex='-1' role='dialog' aria-labelledby='modalTitle' aria-hidden='true')
+	.modal-dialog.modal-dialog-centered(role='document')
+		.swiper-button-prev.card-nav.card-nav--prev
+			+icon('arrow','swiper-arrow')
+		.swiper-button-next.card-nav.card-nav--next
+			+icon('arrow','swiper-arrow')
+		.modal-content
+			button.close(type='button' data-dismiss='modal' aria-label='Close')
+				+icon('error')
+			.card-container
+				img.card__img(src="img/content/category-item1.png", alt="")
+				.card
+					.card__option
+						.card__option-item.card__option-item--new.bg-secondary.mr-1 Новинка
+						.card__option-item.card__option-item--hit.bg-primary.text-white Хит
+					.card__body
+						img.card__img(src="img/content/category-item1.png", alt="")
+						.card__name
+							.card__title Алтайский натуральный сотовый мёд
+							.card__category.text-small Мёд классический
+							.card__rating
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+								+icon('star')
+						hr.my-3.border-light
+					.card__feature-list.d-flex
+						.card__feature-color.d-flex.justify-content-between.divider
+							span.card__feature-name Цвет
+							span Жёлтый
+						.card__feature-comp.d-flex.justify-content-between
+							span.card__feature-name Консистенция
+							span Жидкая
+						.card__feature-consist.d-flex.justify-content-between
+							span.card__feature-name Состав
+							span Без добавок
+					.card__footer.d-flex.justify-content-between.align-items-end
+						.card__specs
+							.card__weight.text-black-50.text-small.text-left 250 гр.
+							.card__price 241 <span class="rub">P</span>
+						.count-block.align-items-end
+							.count-block__minus -
+							input.count-block__value(type='text', value='1')
+							.count-block__plus +
+						.card__basket-container
+							.card__basket
+								span.b Купить
+								img.basket-icon(src="/img/general/basket-yellow.svg", alt="")
